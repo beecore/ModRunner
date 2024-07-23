@@ -104,4 +104,9 @@ public class ShopManager : MonoBehaviour
     {
        PlayerPrefs.SetInt("lastSelectedSkin", indexSkin);
     }
+    public void ShowAds()
+    {
+        AdsManager.Instance.ShowRewardedAd();
+
+    }
 }

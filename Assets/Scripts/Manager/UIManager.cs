@@ -5,15 +5,32 @@ using UnityEngine.UI;
 
 public class UIManager : SingletonMonoBehaviour<UIManager>
 {
-    [SerializeField] private GameObject menuPanel;
-    [SerializeField] private GameObject gamePanel;
-    [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private GameObject levelCompletePanel;
-    [SerializeField] private GameObject settingPanel;
-    [SerializeField] private Slider progressBar;
-    [SerializeField] private GameObject shopPanel;
-    [SerializeField] private ShopManager shopManager;
-    [SerializeField] private TextMeshProUGUI LevelText;
+    [SerializeField]
+    private GameObject menuPanel;
+
+    [SerializeField]
+    private GameObject gamePanel;
+
+    [SerializeField]
+    private GameObject gameOverPanel;
+
+    [SerializeField]
+    private GameObject levelCompletePanel;
+
+    [SerializeField]
+    private GameObject settingPanel;
+
+    [SerializeField]
+    private Slider progressBar;
+
+    [SerializeField]
+    private GameObject shopPanel;
+
+    [SerializeField]
+    private ShopManager shopManager;
+
+    [SerializeField]
+    private TextMeshProUGUI LevelText;
 
     protected override void Awake()
     {
@@ -36,7 +53,6 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         GameManager.onGameStateChanged -= GameStateChangeCallBack;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         UpdateProgressBar();
@@ -65,6 +81,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     {
         SceneManager.LoadScene(0);
     }
+
     public void ShowLevelComplete()
     {
         gamePanel.SetActive(false);
@@ -76,34 +93,33 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         gamePanel.SetActive(false);
         gameOverPanel.SetActive(true);
     }
+
     public void ShowSettingPanel()
     {
         settingPanel.SetActive(true);
-       
     }
+
     public void HiddenSettingPanel()
     {
         settingPanel.SetActive(false);
-
     }
+
     public void UpdateProgressBar()
     {
         if (!GameManager.Instance.IsGameState())
             return;
-
         float progress = PlayerController.Instance.transform.position.z / ChunkManager.Instance.GetFinishZ();
-
         progressBar.value = progress;
     }
+
     public void ShowShopPanel()
     {
         shopPanel.SetActive(true);
         shopManager.UpdatePurchaseButton();
-
     }
+
     public void HiddenShopPanel()
     {
         shopPanel.SetActive(false);
-
     }
 }

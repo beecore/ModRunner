@@ -9,6 +9,8 @@ public class PlayerDetection : MonoBehaviour
     [Header("Elements")]
     [SerializeField] private CrowdSystem crowdSystem;
     public static Action onDoorHit;
+    public static Action onCoinHit;
+    public static Action onWinHit;
     // Update is called once per frame
     void Update()
     {
@@ -34,11 +36,13 @@ public class PlayerDetection : MonoBehaviour
             }
             else if (detectedColliders[i].tag == "Finish")
             {
+                onWinHit?.Invoke();
                 PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
                 GameManager.Instance.SetGameState(GameManager.GameState.LevelComplete);
             }
             else if (detectedColliders[i].tag == "Coin")
             {
+                onCoinHit?.Invoke();
                 Destroy(detectedColliders[i].gameObject);
                 DataManager.Instance.AddCoins(1);
             }

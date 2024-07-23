@@ -157,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1398746212156101552, guid: b51c105bda1993041accbe50ff31b08a, type: 3}
       propertyPath: leftDoorBonusAmout
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1398746212156101552, guid: b51c105bda1993041accbe50ff31b08a, type: 3}
       propertyPath: rightDoorBonusType
@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1398746212156101552, guid: b51c105bda1993041accbe50ff31b08a, type: 3}
       propertyPath: rightDoorBonusAmout
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1398746212156101553, guid: b51c105bda1993041accbe50ff31b08a, type: 3}
       propertyPath: m_RootOrder

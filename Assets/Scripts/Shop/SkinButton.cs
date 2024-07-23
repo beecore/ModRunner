@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+
 public class SkinButton : MonoBehaviour
 {
     [SerializeField] private Button thisButton;
@@ -19,6 +18,7 @@ public class SkinButton : MonoBehaviour
         else
             Lock();
     }
+
     public void Unlock()
     {
         //TH mở khóa nhân vật
@@ -27,6 +27,7 @@ public class SkinButton : MonoBehaviour
         lockImage.SetActive(false);
         unlocked = true;
     }
+
     public void Lock()
     {
         //TH  khóa nhân vật
@@ -35,18 +36,22 @@ public class SkinButton : MonoBehaviour
         lockImage.SetActive(true);
         unlocked = false;
     }
+
     public void Select()
     {
         selector.SetActive(true);
     }
+
     public void Deselect()
     {
         selector.SetActive(false);
     }
+
     public bool IsUnlocked()
     {
         return unlocked;
     }
+
     public Button GetButton()
     {
         return thisButton;
